@@ -17,7 +17,7 @@ function DataInput({ onChatGPTResponse }) {
 
       // Send image data to ChatGPT's API endpoint
       try {
-        const response = await fetch('CHATGPT_API_ENDPOINT', {
+        const response = await fetch('http://localhost:3000/api/coral-info', {
           method: 'POST',
           body: formData,
           // Add necessary headers like Authorization, content type, etc.

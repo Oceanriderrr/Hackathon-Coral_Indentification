@@ -1,6 +1,7 @@
-import React from 'react';
 
-function DisplayData({ chatGPTData }) {
+async function DisplayData({ chatGPTData }) {
+  // const response = await fetch('http://localhost:3000/api/coral-info');
+  // console.log('RESPONSE', await response);
   return (
     <div>
       {/* Display data received from ChatGPT */}
@@ -12,41 +13,3 @@ function DisplayData({ chatGPTData }) {
 }
 
 export default DisplayData;
-
-
-
-
-// import React from 'react';
-
-// function DisplayData({ dataFromAPI }) {
-//   return (
-//     <div>
-//       {/* Display data from the API */}
-//       <h2>AI Model Output:</h2>
-//       <pre>{JSON.stringify(dataFromAPI, null, 2)}</pre>
-//       {/* You might format and display the data more appropriately */}
-//     </div>
-//   );
-// }
-
-// export default DisplayData;
-
-
-
-
-
-
-
-
-// import React from 'react'
-
-// const DisplayData = () => {
-//   return (
-//     <div>
-//         <p>Here we will display what ChatGPT gives us</p>
-        
-//     </div>
-//   )
-// }
-
-// export default DisplayData
