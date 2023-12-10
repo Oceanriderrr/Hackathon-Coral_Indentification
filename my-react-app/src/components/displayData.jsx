@@ -22,7 +22,6 @@ const DisplayData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log('TRY')
         const response = await fetch('http://localhost:3000/api/coral-info');
 
         if (!response.ok) {
@@ -53,3 +52,5 @@ const DisplayData = () => {
 };
 
 export default DisplayData;
+
+
