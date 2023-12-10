@@ -13,8 +13,9 @@ function App() {
   return (
     <div>
       <h1>Coral Species Recognition</h1>
-      <DataInput onChatGPTResponse={handleChatGPTResponse} />
-      {chatGPTResponse && <DisplayData chatGPTData={chatGPTResponse} />}
+      {/* <DataInput onChatGPTResponse={handleChatGPTResponse} /> */}
+      <DisplayData />
+      {/* {chatGPTResponse && <DisplayData chatGPTData={chatGPTResponse} />} */}
     </div>
   );
 }
