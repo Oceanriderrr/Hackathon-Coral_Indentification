@@ -47,13 +47,13 @@ function App() {
       {base64Image && (
         <div>
           <h2>Coral Image:</h2>
-          <img src={base64Image} alt="Uploaded" style={{ maxWidth: '25%' }} />
+          <img src={base64Image} alt="Uploaded" style={{ maxWidth: '50%', borderRadius: '10%' }} />
         </div>
       )}
       {coralInfo && (
         <div>
           <h2>Coral Information:</h2>
-          <pre>{JSON.stringify(coralInfo, null, 2)}</pre>
+          <div>{JSON.stringify(coralInfo, null, 2)}</div>
         </div>
       )}
       {/* <DataInput onChatGPTResponse={handleChatGPTResponse} /> */}

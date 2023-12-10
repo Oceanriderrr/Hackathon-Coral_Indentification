@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -5,6 +6,7 @@ const OpenAI = require('openai')
 const fs = require('fs');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const { SYSTEM, ASSISTANT } = require('./config');
 
 
 // Enable CORS for all routes
@@ -14,7 +16,7 @@ app.use(cors());
 app.use(bodyParser.text({ type: 'text/plain', limit: '10mb' }));
 
 // Initialize OpenAI API with your API key
-const openai = new OpenAI({ apiKey: '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' });
+const openai = new OpenAI({ apiKey: 'APIKEY' });
 
 // Define a function to make a request to the OpenAI GPT API
 const defineCoral = async (dataUri) => {
@@ -30,7 +32,7 @@ const defineCoral = async (dataUri) => {
       messages: [
         {
           role: 'system',
-          content: 'you are a helpful assistant designed to identify the type of coral reef from an image. You can specify the species and the health of the coral reef.'
+          content: SYSTEM
         },
         {
           role: 'user',
@@ -46,13 +48,13 @@ const defineCoral = async (dataUri) => {
         },
         {
           role: 'assistant',
-          content: 'you are a helpful assistant that can identify the coral reef health by examining the colors of the coral and seeing if there is a high amount of coral bleaching.'
+          content: ASSISTANT
         },
         {
           role: 'user',
           content: [
             {
-              type: 'text', text: 'Can you tell me the coral health by observing the photo and identifying if there is any bleaching?'
+              type: 'text', text: 'Can you tell me anything about the coral health by observing the photo and identifying if there is any coral bleaching?'
             }
           ]
         },

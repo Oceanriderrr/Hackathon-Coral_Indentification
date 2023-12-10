@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 
 const ImageUploader = ({ onUpload }) => {
+
+  const inputStyle = {
+    border: 'none',
+    borderBottom: '2px solid #3498db', // Set the color of the squiggly line
+    outline: 'none',
+    fontSize: '16px',
+    padding: '5px',
+    position: 'relative',
+  };
+
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (e) => {
@@ -25,9 +35,13 @@ const ImageUploader = ({ onUpload }) => {
   };
 
   return (
-    <div>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Submit Image of Coral</button>
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    }}>
+      <input type="file" style={inputStyle} onChange={handleFileChange} />
+      <button onClick={handleUpload}>Submit Image </button>
     </div>
   );
 };
