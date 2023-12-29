@@ -16,7 +16,7 @@ app.use(cors());
 app.use(bodyParser.text({ type: 'text/plain', limit: '10mb' }));
 
 // Initialize OpenAI API with your API key
-const openai = new OpenAI({ apiKey: 'APIKEY' });
+const openai = new OpenAI({ apiKey: '' });
 
 // Define a function to make a request to the OpenAI GPT API
 const defineCoral = async (dataUri) => {
